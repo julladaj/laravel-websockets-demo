@@ -14188,11 +14188,15 @@ if (token) {
 window.Pusher = __webpack_require__(38);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo__["a" /* default */]({
-  broadcaster: 'pusher',
-  key: "websocketkey",
-  wsHost: window.location.hostname,
-  wsPort: 6001,
-  disableStats: true
+    auth:{ headers: { 'Authorization': 'Bearer 112' } },
+    forceTLS: true,
+    broadcaster: 'pusher',
+    key: "websocketkey",
+    wsHost: window.location.hostname,
+    wsPort: 6001,
+    wssPort: 6001,
+    disableStats: false,
+    enabledTransports: ['ws', 'wss']
 });
 
 /***/ }),

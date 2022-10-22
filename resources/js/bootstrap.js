@@ -49,9 +49,13 @@ import Echo from 'laravel-echo'
 window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({
+    auth:{ headers: { 'Authorization': 'Bearer 112' } },
     broadcaster: 'pusher',
     key: process.env.MIX_PUSHER_APP_KEY,
-    wsHost: window.location.hostname,
+    wsHost: 'broadcast.test.com',
     wsPort: 6001,
+    wssPort: 6001,
     disableStats: true,
+    forceTLS: true,
+    enabledTransports: ['ws', 'wss']
 });
