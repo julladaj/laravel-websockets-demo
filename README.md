@@ -31,6 +31,18 @@ php artisan key:generate
 php artisan websockets:serve
 ```
 
+## Fix "Laravel PackageManifest.php: Undefined index: name"
+Find line 116 and comment it:
+
+```php
+$packages = json_decode($this->files->get($path), true);
+```
+Add two new lines after the above commented line:
+```php
+$installed = json_decode($this->files->get($path), true);
+$packages = $installed['packages'] ?? $installed;
+```
+
 ## Credits
 
 - [Marcel Pociot](https://github.com/mpociot)
