@@ -7,11 +7,29 @@ Be sure to check out the [official documentation](https://docs.beyondco.de/larav
 ## Usage
 
 1. Clone this repository
-2. `composer install`
-3. `cp .env.example .env`
-4. `php artisan migrate`
-5. `php artisan key:generate`
-6. `php artisan websockets:serve`
+```shell
+git clone https://github.com/beyondcode/laravel-websockets-demo.git
+```
+2. Install composer
+```shell
+composer install
+```
+3. Create `.env` file
+```shell
+cp .env.example .env
+```
+4. Migrate
+```shell
+php artisan migrate
+```
+5. Generate the key
+```shell
+php artisan key:generate
+```
+6. Start the server (default is port 6001)
+```shell
+php artisan websockets:serve
+```
 
 ## Credits
 
